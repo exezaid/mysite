@@ -18,11 +18,9 @@ class Publisher(Model):
         pass
 
 class Author(Model):
-    salutation = CharField(max_length=10)
     first_name = CharField(max_length=30)
     last_name = CharField(max_length=40)
-    email = EmailField()
-    headshot = ImageField(upload_to='/tmp')
+    email = EmailField(blank=True)
 
     def __unicode__(self):
         return '%s%s'%(self.first_name, self.last_name)
