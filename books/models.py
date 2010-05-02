@@ -20,10 +20,10 @@ class Publisher(Model):
 class Author(Model):
     first_name = CharField(max_length=30)
     last_name = CharField(max_length=40)
-    email = EmailField(blank=True)
+    email = EmailField('e-mail', blank=True)
 
     def __unicode__(self):
-        return '%s%s'%(self.first_name, self.last_name)
+        return u'%s %s' % (self.first_name, self.last_name)
 
     class Admin:
         pass
@@ -32,8 +32,7 @@ class Book(Model):
     title = CharField(max_length=100)
     authors = ManyToManyField(Author)
     publisher = ForeignKey(Publisher)
-    publication_date = DateField()
-    num_pages = IntegerField(blank=True, null=True)
+    publication_date = DateField(blank=True, null=True)
 
     def __unicode__(self):
         return self.title

@@ -1,7 +1,7 @@
 from django.conf.urls.defaults import *
 from mysite.views import current_datetime
 from mysite.views import hours_ahead 
-from mysite import books 
+from mysite.books import views
 
 # Uncomment the next two lines to enable the admin:
 from django.contrib import admin
@@ -20,4 +20,6 @@ urlpatterns = patterns('',
     (r'^admin/', include(admin.site.urls)),
     (r'^time/$', current_datetime),
     (r'^time/plus/(\d{1,2})/$', hours_ahead),
+    (r'^search-form/$', views.search_form),
+    (r'^search/$', views.search),
 )
