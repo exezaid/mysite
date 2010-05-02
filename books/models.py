@@ -8,7 +8,7 @@ class Publisher(Model):
     country = CharField(max_length=50)
     website = URLField()
     
-    def __str__(self):
+    def __unicode__(self):
         return self.name
     
     class Meta:
@@ -24,7 +24,7 @@ class Author(Model):
     email = EmailField()
     headshot = ImageField(upload_to='/tmp')
 
-    def __str__(self):
+    def __unicode__(self):
         return '%s%s'%(self.first_name, self.last_name)
 
     class Admin:
@@ -37,7 +37,7 @@ class Book(Model):
     publication_date = DateField()
     num_pages = IntegerField(blank=True, null=True)
 
-    def __str__(self):
+    def __unicode__(self):
         return self.title
 
     class Admin:
