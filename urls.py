@@ -22,4 +22,5 @@ urlpatterns = patterns('',
     (r'^time/plus/(\d{1,2})/$', hours_ahead),
     (r'^search-form/$', views.search_form),
     (r'^search/$', views.search),
+    (r'^contact/$', views.contact)
 )
